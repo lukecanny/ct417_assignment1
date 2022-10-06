@@ -19,4 +19,28 @@ public class Course {
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+	
+	public ArrayList<Student> getListOfStudents(){
+		return listOfStudents;
+	}
+	
+	public ArrayList<Module> getListOfModules() {
+		return listOfModules;
+	}
+	
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+	
+	public LocalDate getEndDate() {
+		return endDate;
+	}
 }
