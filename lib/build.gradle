@@ -25,6 +25,10 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:31.0.1-jre'
+    
+    // Joda-Time library used for dealing with time.
+	// https://mvnrepository.com/artifact/org.terasoluna.gfw/terasoluna-gfw-jodatime
+	implementation group: 'org.terasoluna.gfw', name: 'terasoluna-gfw-jodatime', version: '5.7.1.SP1.RELEASE'
 }
 
 tasks.named('test') {
