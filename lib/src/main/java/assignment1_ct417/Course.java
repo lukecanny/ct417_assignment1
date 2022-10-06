@@ -11,7 +11,7 @@ public class Course {
 	LocalDate startDate;
 	LocalDate endDate;
 	
-	Course (String courseName, String courseCode, ArrayList<Student> listOfStudents, ArrayList<Module> listOfModules, LocalDate startDate, LocalDate endDate){
+	public Course (String courseName, String courseCode, ArrayList<Student> listOfStudents, ArrayList<Module> listOfModules, LocalDate startDate, LocalDate endDate){
 		this.courseName = courseName;
 		this.courseCode = courseCode;
 		this.listOfStudents = listOfStudents;

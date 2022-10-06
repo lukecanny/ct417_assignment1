@@ -10,7 +10,7 @@ public class Module {
 	ArrayList<Course> associatedCourses;
 	ArrayList<Student> listOfStudents;
 	
-	Module(Lecturer lecturer, String moduleName, String moduleCode){
+	public Module(Lecturer lecturer, String moduleName, String moduleCode){
 		this.lecturer= lecturer;
 		this.moduleName = moduleName;
 		this.moduleCode = moduleCode;

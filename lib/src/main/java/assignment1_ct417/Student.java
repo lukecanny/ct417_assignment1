@@ -13,7 +13,7 @@ public class Student {
 	String courseCode;
 	ArrayList<Module> listOfModules = new ArrayList<Module>();
 	
-	Student (String name, LocalDate dob, String courseCode){
+	public Student (String name, LocalDate dob, String courseCode){
 		
 		id = ++lastIdUsed;
 		this.name = name;
