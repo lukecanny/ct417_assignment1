@@ -21,29 +21,29 @@ public class Student {
 		this.courseCode = courseCode;
 	}
 
-	String getUsername() {
+	public String getUsername() {
 		return name.replaceAll(" ", "").substring(0,5) + getAge();
 	}
 	
-	int getAge() {
+	public int getAge() {
 		LocalDate currentDate = new LocalDate();
 	    Years age = Years.yearsBetween(dob,currentDate);
 	    return age.getYears();
 	}
 	
-	LocalDate getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dob;
 	}
 	
-	int getID() {
+	public int getID() {
 		return id;
 	}
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	String getCourseCode() {
+	public String getCourseCode() {
 		return courseCode;
 	}
 	
@@ -58,11 +58,7 @@ public class Student {
 	}
 	
 	public void removeModule(Module mod) {
-		for (int i = 0; i < listOfModules.size(); i++) {
-			if (mod.equals(listOfModules.get(i))) {
-				listOfModules.remove(i);
-			}
-		}
+		listOfModules.remove(mod);
 	}
 	
 	public ArrayList<Module> getListOfModules(){

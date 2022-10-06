@@ -14,6 +14,7 @@ public class Module {
 		this.lecturer= lecturer;
 		this.moduleName = moduleName;
 		this.moduleCode = moduleCode;
+		lecturer.addModule(this);
 	}
 	
 	public int addCourse(Course course) {

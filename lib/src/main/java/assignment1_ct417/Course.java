@@ -20,6 +20,32 @@ public class Course {
 		this.endDate = endDate;
 	}
 	
+	public Course (String courseName, String courseCode,LocalDate startDate, LocalDate endDate){
+		this.courseName = courseName;
+		this.courseCode = courseCode;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		listOfStudents = new ArrayList<Student>();
+		listOfModules = new ArrayList<Module>();
+	}
+	
+	public void addStudent(Student newStudent) {
+		listOfStudents.add(newStudent);
+	}
+	
+	public void removeStudent(Student stu) {
+		listOfStudents.remove(stu);
+	}
+	
+	public void addModule(Module newMod) {
+		listOfModules.add(newMod);
+	}
+	
+	public void removeModule(Module mod) {
+		listOfModules.remove(mod);
+	}
+	
+	
 	public String getCourseName() {
 		return courseName;
 	}
