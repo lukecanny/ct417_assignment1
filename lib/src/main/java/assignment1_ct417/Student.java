@@ -1,5 +1,7 @@
 package assignment1_ct417;
 
+import java.util.ArrayList;
+
 import org.joda.time.*;
 
 public class Student {
@@ -9,6 +11,7 @@ public class Student {
 	LocalDate dob;
 	static int lastIdUsed = 0;
 	String courseCode;
+	ArrayList<Module> listOfModules = new ArrayList<Module>();
 	
 	Student (String name, LocalDate dob, String courseCode){
 		
@@ -16,9 +19,8 @@ public class Student {
 		this.name = name;
 		this.dob = dob;
 		this.courseCode = courseCode;
-		System.out.println("Student generated with id of: " + id);
 	}
-	
+
 	String getUsername() {
 		return name.replaceAll(" ", "").substring(0,5) + getAge();
 	}
@@ -39,5 +41,31 @@ public class Student {
 	
 	String getName() {
 		return name;
+	}
+	
+	String getCourseCode() {
+		return courseCode;
+	}
+	
+	public void addModule(Module mod) {
+		listOfModules.add(mod);
+	}
+	
+	public void addModules(ArrayList<Module> mods) {
+		for (int i = 0; i < mods.size(); i++) {
+			listOfModules.add(mods.get(i));
+		}
+	}
+	
+	public void removeModule(Module mod) {
+		for (int i = 0; i < listOfModules.size(); i++) {
+			if (mod.equals(listOfModules.get(i))) {
+				listOfModules.remove(i);
+			}
+		}
+	}
+	
+	public ArrayList<Module> getListOfModules(){
+		return listOfModules;
 	}
 }

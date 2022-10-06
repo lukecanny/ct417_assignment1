@@ -9,7 +9,7 @@ public class Lecturer {
 	int id;
 	LocalDate dob;
 	static int lastIdUsed = 0;
-	ArrayList<Module> listOfTaughtModules;
+	ArrayList<Module> listOfTaughtModules = new ArrayList<Module>();
 	
 	Lecturer (String name, LocalDate dob){
 		this.name = name;
@@ -41,6 +41,12 @@ public class Lecturer {
 
 	public void addModule(Module mod) {
 		listOfTaughtModules.add(mod);
+	}
+
+	public void addModules(ArrayList<Module> mods) {
+		for (int i = 0; i < mods.size(); i++) {
+			listOfTaughtModules.add(mods.get(i));
+		}
 	}
 	
 	public void removeModule(Module mod) {
