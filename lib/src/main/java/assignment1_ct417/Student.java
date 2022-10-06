@@ -18,7 +18,7 @@ public class Student {
 	}
 	
 	String getUsername() {
-		return name.replaceAll("//s+", "").substring(0,5) + getAge();
+		return name.replaceAll(" ", "").substring(0,5) + getAge();
 	}
 	
 	int getAge() {
