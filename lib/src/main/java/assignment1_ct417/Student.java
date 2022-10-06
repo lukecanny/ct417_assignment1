@@ -8,12 +8,13 @@ public class Student {
 	int id;
 	LocalDate dob;
 	static int lastIdUsed = 0;
+	String courseCode;
 	
 	Student (String name, LocalDate dob, String courseCode){
 		this.name = name;
 		this.dob = dob;
 		id = ++lastIdUsed;
-		// courseCode will be used to search for modules.
+		this.courseCode = courseCode;
 	}
 	
 	String getUsername() {
