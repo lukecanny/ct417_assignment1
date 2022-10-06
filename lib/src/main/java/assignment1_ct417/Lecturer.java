@@ -11,7 +11,7 @@ public class Lecturer {
 	static int lastIdUsed = 0;
 	ArrayList<Module> listOfTaughtModules = new ArrayList<Module>();
 	
-	Lecturer (String name, LocalDate dob){
+	public Lecturer (String name, LocalDate dob){
 		this.name = name;
 		this.dob = dob;
 		id = ++lastIdUsed;
