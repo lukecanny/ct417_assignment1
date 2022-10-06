@@ -9,10 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 	
-	Student student;
-	StudentTest() {
-		this.student = new Student("Luke Canny", new LocalDate(2001, 2,20), "CT");
-	}
+	Student student = new Student("Luke Canny", new LocalDate(2001, 2,20), "CT");;
 	
 	@Test
 	void objectCreated() {
@@ -32,5 +29,15 @@ class StudentTest {
 	@Test
 	void getDateOfBirth() {
 		assertEquals(new LocalDate(2001,2,20), student.getDateOfBirth(), "Birthday matches");
+	}
+	
+//	@Test
+//	void getID() {
+//		assertEquals(1, student.getID(), "Student ID should be 1 as first user generated");
+//	}
+	
+	@Test
+	void getAge() {
+		assertEquals(21, student.getAge(), "Student should be 21");
 	}
 }

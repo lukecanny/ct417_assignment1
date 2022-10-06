@@ -11,10 +11,12 @@ public class Student {
 	String courseCode;
 	
 	Student (String name, LocalDate dob, String courseCode){
+		
+		id = ++lastIdUsed;
 		this.name = name;
 		this.dob = dob;
-		id = ++lastIdUsed;
 		this.courseCode = courseCode;
+		System.out.println("Student generated with id of: " + id);
 	}
 	
 	String getUsername() {
