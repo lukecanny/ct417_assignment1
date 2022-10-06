@@ -19,7 +19,7 @@ class LecturerTest {
 	
 	@Test 
 	@DisplayName("Get Lecturer Name")
-	void getlectName() {
+	void getLecturerName() {
 		assertEquals("Jteve Sobs", lect.getName(), "Name matches");
 	}
 	

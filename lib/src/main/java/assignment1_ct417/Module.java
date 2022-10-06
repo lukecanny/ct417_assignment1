@@ -39,7 +39,7 @@ public class Module {
 		return lecturer;
 	}
 
-	public String getModuleName() {
+	public String getName() {
 		return moduleName;
 	}
 
