@@ -15,6 +15,8 @@ public class Module implements UniversityElement{
 		this.moduleName = moduleName;
 		this.moduleCode = moduleCode;
 		lecturer.addModule(this);
+		associatedCourses = new ArrayList<Course>();
+		listOfStudents = new ArrayList<Student>();
 	}
 	
 	public int addCourse(Course course) {

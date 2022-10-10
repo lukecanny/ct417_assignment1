@@ -96,8 +96,8 @@ public class Student implements UniversityElement {
 		str += "Name: " + getName();
 		str += "\nUsername: " + getUsername();
 		str += "\nID: " + getID();
-		str += "Course: " + getCourseCode();
-		str += "\nDate of Birth" + dob.toString();
+		str += "\nCourse: " + getCourseCode();
+		str += "\nDate of Birth: " + dob.toString();
 		str += "\nAge: " + getAge();
  		str += "\nModules: ";
 		for (int i = 0; i < listOfModules.size(); i++) {
