@@ -48,7 +48,7 @@ public class Course implements UniversityElement{
 		for (int i = 0; i < listOfModules.size(); i++) {
 			listOfModules.get(i).removeStudent(student);
 		}
-		return listOfModules;
+		return new ArrayList<Module>();
 	}
 	
 	public void addModule(Module module) {
