@@ -29,6 +29,13 @@ public class Course {
 		listOfModules = new ArrayList<Module>();
 	}
 	
+	public Course () {
+		courseName = "";
+		courseCode = "";
+		startDate = new LocalDate();
+		endDate = new LocalDate();
+	}
+	
 	public void addStudent(Student newStudent) {
 		listOfStudents.add(newStudent);
 	}
@@ -36,6 +43,7 @@ public class Course {
 	public void removeStudent(Student stu) {
 		listOfStudents.remove(stu);
 	}
+	
 	
 	public void addModule(Module newMod) {
 		listOfModules.add(newMod);
