@@ -3,7 +3,7 @@ package assignment1_ct417;
 import org.joda.time.*;
 import java.util.ArrayList;
 
-public class Course {
+public class Course implements UniversityElement{
 	String courseName;
 	String courseCode;
 	ArrayList<Student> listOfStudents;
@@ -76,5 +76,22 @@ public class Course {
 	
 	public LocalDate getEndDate() {
 		return endDate;
+	}
+	
+	public String toString() {
+		String str = "";
+		str += "Name: " + getName();
+		str += "\nCourse Code: " + getCourseCode();
+		str += "\nStart Date: " + getStartDate();
+		str += "\nEnd Date: "+getEndDate();
+ 		str += "\nRelated Modules: ";
+		for (int i = 0; i < listOfModules.size(); i++) {
+			str += "\n     " + listOfModules.get(i).getName();
+		}
+		str += "\nEnrolled Students: ";
+		for (int i = 0; i < listOfStudents.size(); i++) {
+			str += "\n     " + listOfStudents.get(i).getName();
+		}
+		return str;
 	}
 }

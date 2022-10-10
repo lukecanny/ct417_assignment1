@@ -3,7 +3,7 @@ package assignment1_ct417;
 import org.joda.time.*;
 import java.util.ArrayList;
 
-public class Lecturer implements GetInformation {
+public class Lecturer implements UniversityElement {
 	
 	String name;
 	int id;

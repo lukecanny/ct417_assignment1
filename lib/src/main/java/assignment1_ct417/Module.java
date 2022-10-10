@@ -3,7 +3,7 @@ package assignment1_ct417;
 import java.util.ArrayList;
 
 
-public class Module {
+public class Module implements UniversityElement{
 	Lecturer lecturer;
 	String moduleName;
 	String moduleCode;
@@ -54,6 +54,22 @@ public class Module {
 	
 	public ArrayList<Student> getListOfStudents(){
 		return listOfStudents;
+	}
+	
+	public String toString() {
+		String str = "";
+		str += "Name: " + getName();
+		str += "\nLecturer: " + getLecturer().getName();
+		str += "\nModule Code: " + getModuleCode();
+ 		str += "\nRelated Courses: ";
+		for (int i = 0; i < associatedCourses.size(); i++) {
+			str += "\n     " + associatedCourses.get(i).getName();
+		}
+		str += "\nEnrolled Students: ";
+		for (int i = 0; i < listOfStudents.size(); i++) {
+			str += "\n     " + listOfStudents.get(i).getName();
+		}
+		return str;
 	}
 
 }

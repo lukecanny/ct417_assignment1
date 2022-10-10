@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.joda.time.*;
 
-public class Student {
+public class Student implements UniversityElement {
 	
 	String name;
 	int id;
@@ -89,5 +89,20 @@ public class Student {
 	
 	public ArrayList<Module> getListOfModules(){
 		return listOfModules;
+	}
+	
+	public String toString() {
+		String str = "";
+		str += "Name: " + getName();
+		str += "\nUsername: " + getUsername();
+		str += "\nID: " + getID();
+		str += "Course: " + getCourseCode();
+		str += "\nDate of Birth" + dob.toString();
+		str += "\nAge: " + getAge();
+ 		str += "\nModules: ";
+		for (int i = 0; i < listOfModules.size(); i++) {
+			str += "\n     " + listOfModules.get(i).getName();
+		}
+		return str;
 	}
 }
