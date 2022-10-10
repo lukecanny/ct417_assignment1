@@ -7,9 +7,11 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 class CourseTest {
 	
-	Course course = new Course("Electronic and Computer Engineering", "GY406", null, null, new LocalDate(2019,9,5), new LocalDate(2024,5,10));
+	Course course = new Course("Electronic and Computer Engineering", "GY406", new ArrayList<Module>(), new LocalDate(2019,9,5), new LocalDate(2024,5,10));
 	
 	@Test
 	@DisplayName("Object Created")

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 	
-	Student student = new Student("Luke Canny", new LocalDate(2001, 2,20));;
+	Student student = new Student("Luke Canny", new LocalDate(2001, 2,20));
 	
 	@Test
 	@DisplayName("Object Created")
@@ -40,10 +40,5 @@ class StudentTest {
 	void getAge() {
 		assertEquals(21, student.getAge(), "Student should be 21");
 	}
-	
-	@Test
-	@DisplayName("Get Course Code")
-	void getCourseCode() {
-		assertEquals("ECE", student.getCourseCode(), "Student is enrolled in EC Engineering");
-	}
+
 }
