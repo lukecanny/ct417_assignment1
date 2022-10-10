@@ -20,7 +20,7 @@ class CourseTest {
 	@Test 
 	@DisplayName("Get Course Name")
 	void getCourseName() {
-		assertEquals("Electronic and Computer Engineering", course.getCourseName(), "Name matches");
+		assertEquals("Electronic and Computer Engineering", course.getName(), "Name matches");
 	}
 	
 	@Test

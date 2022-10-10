@@ -28,10 +28,28 @@ public class Module implements UniversityElement{
 		return 0;
 	}
 	
+	public int removeCourse(Course course) {
+		try {
+			associatedCourses.remove(course);
+		} catch (Exception e) {
+			return -1;
+		}
+		return 0;
+	}
+	
 	
 	public int addStudent(Student student) {
 		try {
 			listOfStudents.add(student);
+		} catch (Exception e) {
+			return -1;
+		}
+		return 0;
+	}
+	
+	public int removeStudent(Student student) {
+		try {
+			listOfStudents.remove(student);
 		} catch (Exception e) {
 			return -1;
 		}
@@ -73,5 +91,7 @@ public class Module implements UniversityElement{
 		}
 		return str;
 	}
+
+	
 
 }

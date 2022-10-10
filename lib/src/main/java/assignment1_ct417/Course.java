@@ -11,22 +11,21 @@ public class Course implements UniversityElement{
 	LocalDate startDate;
 	LocalDate endDate;
 	
-	public Course (String courseName, String courseCode, ArrayList<Student> listOfStudents, ArrayList<Module> listOfModules, LocalDate startDate, LocalDate endDate){
+	/* Course created with the following parameters
+	 * Course name, course code, list of modules, start date and end date.
+	 * 
+	 * Constructor adds itself to list of associated courses of each module.
+	 */
+	public Course (String courseName, String courseCode, ArrayList<Module> listOfModules, LocalDate startDate, LocalDate endDate){
 		this.courseName = courseName;
 		this.courseCode = courseCode;
-		this.listOfStudents = listOfStudents;
 		this.listOfModules = listOfModules;
+		this.listOfStudents = new ArrayList<Student>();
+		for (int i = 0; i < listOfModules.size(); i++) {
+			((Module)listOfModules.get(i)).addCourse(this);
+		}
 		this.startDate = startDate;
 		this.endDate = endDate;
-	}
-	
-	public Course (String courseName, String courseCode,LocalDate startDate, LocalDate endDate){
-		this.courseName = courseName;
-		this.courseCode = courseCode;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		listOfStudents = new ArrayList<Student>();
-		listOfModules = new ArrayList<Module>();
 	}
 	
 	public Course () {
@@ -44,24 +43,30 @@ public class Course implements UniversityElement{
 		return listOfModules;
 	}
 	
-	public void addStudent(Student newStudent) {
-		listOfStudents.add(newStudent);
+	public ArrayList<Module> disenroll(Student student) {
+		listOfStudents.remove(student);
+		for (int i = 0; i < listOfModules.size(); i++) {
+			listOfModules.get(i).removeStudent(student);
+		}
+		return listOfModules;
 	}
 	
-	public void removeStudent(Student stu) {
-		listOfStudents.remove(stu);
+	public void addModule(Module module) {
+		module.addCourse(this);
+		listOfModules.add(module);
+		for (int i = 0; i < listOfStudents.size(); i++) {
+			listOfStudents.get(i).addModule(module);
+		}
 	}
 	
-	
-	public void addModule(Module newMod) {
-		listOfModules.add(newMod);
+	public void removeModule(Module module) {
+		module.removeCourse(this);
+		listOfModules.remove(module);
+		for (int i = 0; i < listOfStudents.size(); i++) {
+			listOfStudents.get(i).removeModule(module);
+		}
 	}
-	
-	public void removeModule(Module mod) {
-		listOfModules.remove(mod);
-	}
-	
-	
+		
 	public String getName() {
 		return courseName;
 	}

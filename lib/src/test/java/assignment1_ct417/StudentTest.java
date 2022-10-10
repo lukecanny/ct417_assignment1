@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 	
-	Student student = new Student("Luke Canny", new LocalDate(2001, 2,20), "ECE");;
+	Student student = new Student("Luke Canny", new LocalDate(2001, 2,20));;
 	
 	@Test
 	@DisplayName("Object Created")

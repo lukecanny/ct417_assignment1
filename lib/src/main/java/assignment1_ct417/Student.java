@@ -12,6 +12,7 @@ public class Student implements UniversityElement {
 	static int lastIdUsed = 0;
 	String courseCode = "";
 	ArrayList<Module> listOfModules = new ArrayList<Module>();
+	Course course;
 	
 	public Student (String name, LocalDate dob){
 		id = ++lastIdUsed;
@@ -20,8 +21,17 @@ public class Student implements UniversityElement {
 	}
 	
 	public void enroll(Course course) {
+		this.course = course;
 		courseCode = course.getCourseCode();
 		listOfModules = course.enroll(this);
+	}
+	
+	public void disenroll() {
+		if (course != null) {
+			courseCode = "";
+			listOfModules = course.disenroll(this);
+			course = null;
+		}
 	}
 
 	public String getUsername() {
