@@ -3,7 +3,7 @@ package assignment1_ct417;
 import org.joda.time.*;
 import java.util.ArrayList;
 
-public class Lecturer {
+public class Lecturer implements GetInformation {
 	
 	String name;
 	int id;
@@ -59,5 +59,19 @@ public class Lecturer {
 	
 	public ArrayList<Module> getListOfModules(){
 		return listOfTaughtModules;
+	}
+	
+	public String toString() {
+		String str = "";
+		str += "Name: " + getName();
+		str += "\nUsername: " + getUsername();
+		str += "\nID: " + getID();
+		str += "\nDate of Birth" + dob.toString();
+		str += "\nAge: " + getAge();
+		str += "\nModules: ";
+		for (int i = 0; i < listOfTaughtModules.size(); i++) {
+			str += "\n     " + listOfTaughtModules.get(i).getName();
+		}
+		return str;
 	}
 }

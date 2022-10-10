@@ -54,7 +54,7 @@ public class Course {
 	}
 	
 	
-	public String getCourseName() {
+	public String getName() {
 		return courseName;
 	}
 	
