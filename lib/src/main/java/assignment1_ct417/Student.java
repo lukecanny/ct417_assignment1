@@ -10,21 +10,18 @@ public class Student implements UniversityElement {
 	int id;
 	LocalDate dob;
 	static int lastIdUsed = 0;
-	String courseCode;
+	String courseCode = "";
 	ArrayList<Module> listOfModules = new ArrayList<Module>();
 	
-	public Student (String name, LocalDate dob, String courseCode){
+	public Student (String name, LocalDate dob){
 		id = ++lastIdUsed;
 		this.name = name;
 		this.dob = dob;
-		this.courseCode = courseCode;
 	}
 	
-	public Student() {
-		id = ++lastIdUsed;
-		name = "";
-		courseCode = "";
-		dob = new LocalDate();
+	public void enroll(Course course) {
+		courseCode = course.getCourseCode();
+		listOfModules = course.enroll(this);
 	}
 
 	public String getUsername() {

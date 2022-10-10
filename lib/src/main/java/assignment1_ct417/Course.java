@@ -36,6 +36,14 @@ public class Course implements UniversityElement{
 		endDate = new LocalDate();
 	}
 	
+	public ArrayList<Module> enroll(Student student) {
+		listOfStudents.add(student);
+		for (int i = 0; i < listOfModules.size(); i++) {
+			listOfModules.get(i).addStudent(student);
+		}
+		return listOfModules;
+	}
+	
 	public void addStudent(Student newStudent) {
 		listOfStudents.add(newStudent);
 	}
