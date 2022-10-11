@@ -1,4 +1,4 @@
-ackage assignment1_ct417;
+package assignment1_ct417;
 import org.joda.time.*;
 import org.junit.jupiter.api.*;
 
